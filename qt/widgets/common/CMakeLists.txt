@@ -33,6 +33,7 @@ set(
   # todo: move this to the instrument view library when the slice
   # viewer library is removed
   src/IFunctionModel.cpp
+  src/ImageInfoModel.cpp
   src/InputController.cpp
   src/InstrumentSelector.cpp
   src/InterfaceManager.cpp
@@ -158,8 +159,9 @@ set(
   inc/MantidQtWidgets/Common/FunctionMultiDomainPresenter.h
   inc/MantidQtWidgets/Common/FunctionTreeView.h
   inc/MantidQtWidgets/Common/GenericDialog.h
-  inc/MantidQtWidgets/Common/IFunctionView.h
   inc/MantidQtWidgets/Common/HintingLineEdit.h
+  inc/MantidQtWidgets/Common/IFunctionView.h
+  inc/MantidQtWidgets/Common/ImageInfoModel.h
   inc/MantidQtWidgets/Common/InputController.h
   inc/MantidQtWidgets/Common/InstrumentSelector.h
   inc/MantidQtWidgets/Common/LineEditWithClear.h
@@ -322,6 +324,7 @@ set(
   src/HelpWindow.cpp
   src/FlowLayout.cpp
   src/Hint.cpp
+  src/ImageInfoModel.cpp
   src/InterfaceManager.cpp
   src/ListPropertyWidget.cpp
   src/LocalParameterEditor.cpp
@@ -539,6 +542,7 @@ set(
   inc/MantidQtWidgets/Common/HintingLineEdit.h
   inc/MantidQtWidgets/Common/CatalogSearch.h
   inc/MantidQtWidgets/Common/CatalogSelector.h
+  inc/MantidQtWidgets/Common/ImageInfoModel.h
   inc/MantidQtWidgets/Common/InstrumentSelector.h
   inc/MantidQtWidgets/Common/InputController.h
   inc/MantidQtWidgets/Common/MantidWSIndexDialog.h
@@ -978,6 +982,7 @@ set(
   test/FunctionMultiDomainPresenterTest.h
   test/FunctionBrowserUtilsTest.h
   test/LogValueFinderTest.h
+  test/ImageInfoModelTest.h
   test/InterfaceManagerTest.h
   test/NonOrthogonalTest.h
   test/ParseKeyValueStringTest.h
@@ -1031,6 +1036,7 @@ mtd_add_qt_tests(
     ../../../Framework/TestHelpers/src/DataProcessorTestHelper.cpp
     ../../../Framework/TestHelpers/src/InstrumentCreationHelper.cpp
     ../../../Framework/TestHelpers/src/WorkspaceCreationHelper.cpp
+    ../../../Framework/TestHelpers/src/MDEventsTestHelper.cpp
   LINK_LIBS
     ${TARGET_LIBRARIES}
     DataObjects
@@ -1046,6 +1052,7 @@ set(
   test/FindFilesThreadPoolManagerTest.h
   test/FindFilesWorkerTest.h
   test/FitPropertyBrowserTest.h
+  test/ImageInfoModelTest.h
   test/InterfaceManagerTest.h
   test/QtJSONUtilsTest.h
   test/RepoModelTest.h
@@ -1081,6 +1088,7 @@ mtd_add_qt_tests(
     ../../../Framework/TestHelpers/src/WorkspaceCreationHelper.cpp
     ../../../Framework/TestHelpers/src/ComponentCreationHelper.cpp
     ../../../Framework/TestHelpers/src/InstrumentCreationHelper.cpp
+    ../../../Framework/TestHelpers/src/MDEventsTestHelper.cpp
   LINK_LIBS
     ${TARGET_LIBRARIES}
     ${PYTHON_LIBRARIES}
