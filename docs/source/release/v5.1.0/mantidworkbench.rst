@@ -28,6 +28,8 @@ Improvements
 - The plot toolbar now shows the correct buttons for 3D plots.
 - On 3D plots you can now double-click on the z-axis to change its limits or label.
 - The workspace sample logs interface now responds to keyboard input from the cursor keys to move between logs.
+- A table has been added to the slice viewer containing information about the the pixel the mouse is over.
+
 
 - Surface plots no longer spill over the axes when their limits are reduced.
 
