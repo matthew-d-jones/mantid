@@ -68,7 +68,7 @@ class SliceViewerDataView(QWidget):
         self.fig = Figure()
         self.ax = None
         self.fig.set_facecolor(self.palette().window().color().getRgbF())
-        self.fig.set_tight_layout(True)
+        self.fig.set_constrained_layout(True)
         self.canvas = FigureCanvas(self.fig)
         self.canvas.mpl_connect('motion_notify_event', self.mouse_move)
         self.canvas.mpl_connect('button_press_event', self.mouse_click)
@@ -139,7 +139,6 @@ class SliceViewerDataView(QWidget):
         image_axes = self.ax
         if image_axes is None:
             return
-
         self.clear_line_plots()
         all_axes = self.fig.axes
         # The order is defined by the order of the add_subplot calls so we always want to remove
@@ -229,15 +228,16 @@ class SliceViewerDataView(QWidget):
     def mouse_move(self, event):
         if event.inaxes == self.ax:
             data = self.im.get_cursor_data(event)
-            if data and self.image_info_widget.track_cursor.checkState() == Qt.Checked:
+            if data is not None and self.image_info_widget.track_cursor.checkState() == Qt.Checked:
                 self.image_info_widget.table_widget.updateTable(event.xdata, event.ydata, data)
             if self.line_plots:
                 self.update_line_plots(event.xdata, event.ydata)
 
     def mouse_click(self, event):
-        if event.inaxes == self.ax and event.button == MouseButton.LEFT:
+        if self.image_info_widget.track_cursor.checkState() == Qt.Unchecked \
+                and event.inaxes == self.ax and event.button == MouseButton.LEFT:
             data = self.im.get_cursor_data(event)
-            if data and self.image_info_widget.track_cursor.checkState() == Qt.Unchecked:
+            if data is not None and self.image_info_widget.track_cursor.checkState() == Qt.Unchecked:
                 self.image_info_widget.table_widget.updateTable(event.xdata, event.ydata, data)
 
     def plot_x_line(self, x, y):
