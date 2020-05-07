@@ -5,7 +5,7 @@
 //   Institut Laue - Langevin & CSNS, Institute of High Energy Physics, CAS
 // SPDX - License - Identifier: GPL - 3.0 +
 
-#include "MantidQtWidgets/Common/SliceviewerDisplayType.h"
+#include "MantidQtWidgets/Common/SliceViewerDisplayType.h"
 
 namespace MantidQt {
 namespace MantidWidgets {
