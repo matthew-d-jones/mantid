@@ -1,5 +1,6 @@
 set(SRC_FILES
     src/AbsorptionCorrection.cpp
+    src/AddAbsorptionWeightedPathLengths.cpp
     src/AddLogDerivative.cpp
     src/AddNote.cpp
     src/AddPeak.cpp
@@ -201,6 +202,7 @@ set(SRC_FILES
     src/MaxEnt/MaxentTransformFourier.cpp
     src/MaxEnt/MaxentTransformMultiFourier.cpp
     src/MaxMin.cpp
+    src/MCAbsorptionWeightedPathStrategy.cpp
     src/MedianDetectorTest.cpp
     src/MergeLogs.cpp
     src/MergeRuns.cpp
@@ -345,6 +347,7 @@ set(SRC_FILES
 
 set(INC_FILES
     inc/MantidAlgorithms/AbsorptionCorrection.h
+    inc/MantidAlgorithms/AddAbsorptionWeightedPathLengths.h
     inc/MantidAlgorithms/AddLogDerivative.h
     inc/MantidAlgorithms/AddNote.h
     inc/MantidAlgorithms/AddPeak.h
@@ -550,6 +553,7 @@ set(INC_FILES
     inc/MantidAlgorithms/MaxEnt/MaxentTransformFourier.h
     inc/MantidAlgorithms/MaxEnt/MaxentTransformMultiFourier.h
     inc/MantidAlgorithms/MaxMin.h
+    inc/MantidAlgorithms/MCAbsorptionWeightedPathStrategy.h
     inc/MantidAlgorithms/MedianDetectorTest.h
     inc/MantidAlgorithms/MergeLogs.h
     inc/MantidAlgorithms/MergeRuns.h
