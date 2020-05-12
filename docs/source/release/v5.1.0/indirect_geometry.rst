@@ -10,6 +10,7 @@ Improvements
 
 - An issue with IndirectDataReduction causing it to slow down processing when open has been resolved.
 - Scientific constraints have been added to all fitting tabs in IndirectDataAnalysis.
+- The centre parameter has been added to delta function in the ConvFit tab of Indirect Data Analysis.
 
 Bug Fixes
 #########
