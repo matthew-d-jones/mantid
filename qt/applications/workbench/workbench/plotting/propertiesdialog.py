@@ -115,8 +115,7 @@ class AxisEditor(PropertiesEditorBase):
         # Ensure that only floats can be entered
         self.ui.editor_min.setValidator(QDoubleValidator())
         self.ui.editor_max.setValidator(QDoubleValidator())
-        if figure_type(canvas.figure) in [FigureType.Image, FigureType.Contour,
-                                          FigureType.Surface, FigureType.Wireframe]:
+        if figure_type(canvas.figure) in [FigureType.Surface, FigureType.Wireframe]:
             self.ui.logBox.hide()
             self.ui.gridBox.hide()
 
@@ -208,6 +207,9 @@ class ColorbarAxisEditor(AxisEditor):
 
     def __init__(self, canvas, axes):
         super(ColorbarAxisEditor, self).__init__(canvas, axes, 'y')
+
+        self.ui.logBox.hide()
+        self.ui.gridBox.hide()
 
         self.images = self.canvas.figure.gca().images
         if len(self.images) == 0:
